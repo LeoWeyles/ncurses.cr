@@ -170,6 +170,10 @@ module NCurses
       {begy, begx}
     end
 
+    def mvwin(y, x)
+      check_error(LibNCurses.mvwin(raw_win, y, x), "mvwin")
+    end
+
     def resize(height, width)
       check_error(LibNCurses.wresize(raw_win, height, width), "wresize")
     end

@@ -279,6 +279,7 @@ lib LibNCurses
   fun getmaxy(w : Window) : LibC::Int
   fun getbegx(w : Window) : LibC::Int
   fun getbegy(w : Window) : LibC::Int
+  fun mvwin(w : Window, y : LibC::Int, x : LibC::Int) : Result
   fun wresize(w : Window, height : LibC::Int, width : LibC::Int) : Result
 
   fun delwin(w : Window)
