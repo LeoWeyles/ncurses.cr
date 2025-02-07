@@ -29,7 +29,7 @@ module NCurses
 
   def stdscr
     scr = @@stdscr
-    raise "ncurses not yet initialized" unless scr
+    raise Error.new("ncurses not yet initialized") unless scr
     scr
   end
 
@@ -42,7 +42,7 @@ module NCurses
     def {{name}}
       result = LibNCurses.{{name}}
       if result == LibNCurses::Result::ERR
-        raise "ncurses failure: #{ {{name.stringify}} }"
+        raise Error.new("ncurses failure: #{ {{name.stringify}} }")
       end
       result
     end

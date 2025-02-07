@@ -1,10 +1,11 @@
 require "./libncurses"
+require "./error"
 
 module NCurses
   module RawWindow
     private def check_error(r, msg)
       if r == LibNCurses::Result::ERR
-        raise "ncurses failure: #{msg}"
+        raise Error.new("ncurses failure: #{msg}")
       end
       r
     end

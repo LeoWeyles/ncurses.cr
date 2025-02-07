@@ -1,4 +1,5 @@
 require "./libncurses"
+require "./error"
 
 module NCurses
   alias Attribute = LibNCurses::Attribute
@@ -10,7 +11,7 @@ module NCurses
 
     def init(fg : Color, bg : Color)
       if LibNCurses.init_pair(@id, fg.value, bg.value) == LibNCurses::Result::ERR
-        raise "ncurses failure: init_pair"
+        raise Error.new("ncurses failure: init_pair")
       end
       self
     end
@@ -30,7 +31,7 @@ module NCurses
 
   def use_default_colors
     if LibNCurses.use_default_colors == LibNCurses::Result::ERR
-      raise "ncurses failure: use_default_colors"
+      raise Error.new("ncurses failure: use_default_colors")
     end
   end
 end
