@@ -158,6 +158,18 @@ module NCurses
       {maxy, maxx}
     end
 
+    def begx
+      check_error(LibNCurses.getbegx(raw_win), "getbegx")
+    end
+
+    def begy
+      check_error(LibNCurses.getbegy(raw_win), "getbegy")
+    end
+
+    def begyx
+      {begy, begx}
+    end
+
     def resize(height, width)
       check_error(LibNCurses.wresize(raw_win, height, width), "wresize")
     end

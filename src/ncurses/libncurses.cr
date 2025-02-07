@@ -274,9 +274,11 @@ lib LibNCurses
   fun mvwhline(w : Window, y : LibC::Int, x : LibC::Int, ch : Chtype, n : LibC::Int) : Result
   fun mvwvline(w : Window, y : LibC::Int, x : LibC::Int, ch : Chtype, n : LibC::Int) : Result
 
-  # Size
+  # Position and size
   fun getmaxx(w : Window) : LibC::Int
   fun getmaxy(w : Window) : LibC::Int
+  fun getbegx(w : Window) : LibC::Int
+  fun getbegy(w : Window) : LibC::Int
   fun wresize(w : Window, height : LibC::Int, width : LibC::Int) : Result
 
   fun delwin(w : Window)
