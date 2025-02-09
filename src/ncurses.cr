@@ -56,6 +56,7 @@ module NCurses
   delegate notimeout, to: stdscr
   delegate nodelay, to: stdscr
   delegate getch, to: stdscr
+  delegate get_wch, to: stdscr
   delegate addch, to: stdscr
   delegate addch, to: stdscr
   delegate mvaddch, to: stdscr

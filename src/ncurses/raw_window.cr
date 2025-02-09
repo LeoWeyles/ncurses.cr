@@ -31,6 +31,16 @@ module NCurses
       KeyCode.from_value?(key) || key
     end
 
+    def get_wch
+      key = uninitialized LibNCurses::WIntT
+      res = check_error(LibNCurses.wget_wch(raw_win, pointerof(key)), "wget_wch")
+      if res == KeyCode::CODE_YES.value
+        KeyCode.new(key.to_i32!)
+      else
+        key.chr
+      end
+    end
+
     def erase
       check_error(LibNCurses.werase(raw_win), "werase")
     end

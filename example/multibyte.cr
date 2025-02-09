@@ -20,8 +20,8 @@ NCurses.open do
     NCurses.addstr(s)
     NCurses.refresh
 
-    key = NCurses.getch
-    break if key == 'q'.ord
+    key = NCurses.get_wch
+    break if key == 'q'
     y += 1
     y = 0 if y >= h
   end

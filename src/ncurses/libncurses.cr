@@ -12,6 +12,12 @@ lib LibNCurses
   alias Chtype = LibC::UInt
   alias AttrT = Chtype
 
+  {% if flag?(:windows) %}
+    alias WIntT = LibC::UShort
+  {% else %}
+    alias WIntT = LibC::UInt
+  {% end %}
+
   ATTR_SHIFT = 8_u32
 
   @[Flags]
@@ -241,6 +247,7 @@ lib LibNCurses
   # Input
   fun notimeout(w : Window, bf : Bool) : Result
   fun wgetch(w : Window) : LibC::Int
+  fun wget_wch(w : Window, ch : WIntT*) : LibC::Int
 
   # Output
   fun werase(w : Window) : Result
