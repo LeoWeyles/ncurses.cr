@@ -301,5 +301,5 @@ lib LibNCurses
   fun curses_version : Pointer(LibC::Char)
 
   # for multibyte char...
-  fun setlocale(category : LibC::Int, locale : Pointer(LibC::Char))
+  fun setlocale(category : LibC::Int, locale : LibC::Char*) : LibC::Char*
 end
