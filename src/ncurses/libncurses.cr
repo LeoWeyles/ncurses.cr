@@ -251,6 +251,8 @@ lib LibNCurses
 
   # Output
   fun werase(w : Window) : Result
+  fun wclrtoeol(w : Window) : Result
+  fun wclrtobot(w : Window) : Result
   fun wrefresh(w : Window) : Result
   fun waddch(w : Window, ch : Chtype) : Result
   fun waddnstr(w : Window, s : Pointer(UInt8), n : LibC::Int) : Result

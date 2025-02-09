@@ -62,6 +62,8 @@ module NCurses
   delegate mvaddch, to: stdscr
   delegate mvaddch, to: stdscr
   delegate erase, to: stdscr
+  delegate clrtoeol, to: stdscr
+  delegate clrtobot, to: stdscr
   delegate move, to: stdscr
   delegate addstr, to: stdscr
   delegate mvaddstr, to: stdscr

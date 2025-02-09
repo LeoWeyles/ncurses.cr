@@ -45,6 +45,14 @@ module NCurses
       check_error(LibNCurses.werase(raw_win), "werase")
     end
 
+    def clrtoeol
+      check_error(LibNCurses.wclrtoeol(raw_win), "wclrtoeol")
+    end
+
+    def clrtobot
+      check_error(LibNCurses.wclrtobot(raw_win), "wclrtobot")
+    end
+
     def curs_set(value : Int)
       check_error(LibNCurses.curs_set(value), "curs_set")
     end
